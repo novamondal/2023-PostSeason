@@ -44,8 +44,9 @@ public final class DriveTrain {
 
     public void run(){
         final double rSpeed = Math.signum(Robot.driverController.getRightY())*Constants.DRIVE_POWER*Math.pow(Math.abs(Robot.driverController.getRightY()), Constants.DRIVE_EXPONENT);
-        // (sign of joystick input) * (drive power) * (absolute value of joystick input to the power of drive exponent)
-        final double lSpeed = Math.signum(Robot.driverController.getLeftY())*Constants.DRIVE_POWER*Math.pow(Math.abs(Robot.driverController.getLeftY()), Constants.DRIVE_EXPONENT);
+       //(sign of input) * (drive power) * (absolute value of input)^(drive exponent)
+       final double lSpeed = Math.signum(Robot.driverController.getLeftY())*Constants.DRIVE_POWER*Math.pow(Math.abs(Robot.driverController.getLeftY()), Constants.DRIVE_EXPONENT);
+       //(sign of input) * (drive power) * (absolute value of input)^(drive exponent)
         drive.tankDrive(lSpeed, rSpeed);
     }
 }
