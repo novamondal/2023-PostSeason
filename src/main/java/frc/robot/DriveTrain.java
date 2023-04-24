@@ -7,7 +7,7 @@ import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 public final class DriveTrain {
-    private DifferentialDrive drive;
+    private DifferentialDrive drivetrain;
     public DriveTrain() {
         CANSparkMax Left1 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[0], MotorType.kBrushless);
         CANSparkMax Left2 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[1], MotorType.kBrushless);
@@ -39,7 +39,7 @@ public final class DriveTrain {
 
         MotorControllerGroup leftMotors = new MotorControllerGroup(Left1, Left2, Left3);
         MotorControllerGroup rightMotors = new MotorControllerGroup(Right1, Right2, Right3);
-        drive = new DifferentialDrive(leftMotors, rightMotors);
+        drivetrain = new DifferentialDrive(leftMotors, rightMotors);
     }
 
     public void run(){
@@ -47,6 +47,6 @@ public final class DriveTrain {
        //(sign of input) * (drive power) * (absolute value of input)^(drive exponent)
        final double lSpeed = Math.signum(Robot.driverController.getLeftY())*Constants.DRIVE_POWER*Math.pow(Math.abs(Robot.driverController.getLeftY()), Constants.DRIVE_EXPONENT);
        //(sign of input) * (drive power) * (absolute value of input)^(drive exponent)
-        drive.tankDrive(lSpeed, rSpeed);
+        drivetrain.tankDrive(lSpeed, rSpeed);
     }
 }
