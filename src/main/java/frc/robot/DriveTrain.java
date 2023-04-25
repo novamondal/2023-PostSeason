@@ -11,34 +11,34 @@ public final class DriveTrain {
     public DriveTrain() {
         CANSparkMax Left1 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[0], MotorType.kBrushless);
         CANSparkMax Left2 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[1], MotorType.kBrushless);
-        CANSparkMax Left3 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[2], MotorType.kBrushless);
+        // CANSparkMax Left3 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[2], MotorType.kBrushless);
         CANSparkMax Right1 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[0], MotorType.kBrushless);
         CANSparkMax Right2 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[1], MotorType.kBrushless);
-        CANSparkMax Right3 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[2], MotorType.kBrushless);
+        // CANSparkMax Right3 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[2], MotorType.kBrushless);
        
         Left1.setIdleMode(IdleMode.kBrake);
         Left2.setIdleMode(IdleMode.kBrake);
-        Left3.setIdleMode(IdleMode.kBrake);
+        // Left3.setIdleMode(IdleMode.kBrake);
         Right1.setIdleMode(IdleMode.kBrake);
         Right2.setIdleMode(IdleMode.kBrake);
-        Right3.setIdleMode(IdleMode.kBrake);
+        // Right3.setIdleMode(IdleMode.kBrake);
 
         Left1.setSmartCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
         Left1.setSecondaryCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
         Left2.setSmartCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
         Left2.setSecondaryCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
-        Left3.setSmartCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
-        Left3.setSecondaryCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
+        // Left3.setSmartCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
+        // Left3.setSecondaryCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
         Right1.setSmartCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
         Right1.setSecondaryCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
         Right2.setSmartCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
         Right2.setSecondaryCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
-        Right3.setSmartCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
-        Right3.setSecondaryCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
+        // Right3.setSmartCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
+        // Right3.setSecondaryCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
 
 
-        MotorControllerGroup leftMotors = new MotorControllerGroup(Left1, Left2, Left3);
-        MotorControllerGroup rightMotors = new MotorControllerGroup(Right1, Right2, Right3);
+        MotorControllerGroup leftMotors = new MotorControllerGroup(Left1, Left2);
+        MotorControllerGroup rightMotors = new MotorControllerGroup(Right1, Right2);
         drivetrain = new DifferentialDrive(leftMotors, rightMotors);
     }
 
