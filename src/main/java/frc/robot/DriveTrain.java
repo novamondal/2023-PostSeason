@@ -9,12 +9,12 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 public final class DriveTrain {
     private DifferentialDrive drivetrain;
     public DriveTrain() {
-        CANSparkMax Left1 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[0], MotorType.kBrushless);
-        CANSparkMax Left2 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[1], MotorType.kBrushless);
-        CANSparkMax Left3 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[2], MotorType.kBrushless);
-        CANSparkMax Right1 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[0], MotorType.kBrushless);
-        CANSparkMax Right2 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[1], MotorType.kBrushless);
-        CANSparkMax Right3 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[2], MotorType.kBrushless);
+        final CANSparkMax Left1 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[0], MotorType.kBrushless);
+        final CANSparkMax Left2 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[1], MotorType.kBrushless);
+        final CANSparkMax Left3 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[2], MotorType.kBrushless);
+        final CANSparkMax Right1 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[0], MotorType.kBrushless);
+        final CANSparkMax Right2 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[1], MotorType.kBrushless);
+        final CANSparkMax Right3 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[2], MotorType.kBrushless);
        
         Left1.setIdleMode(IdleMode.kBrake);
         Left2.setIdleMode(IdleMode.kBrake);
@@ -37,8 +37,8 @@ public final class DriveTrain {
         Right3.setSecondaryCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
 
 
-        MotorControllerGroup leftMotors = new MotorControllerGroup(Left1, Left2, Left3);
-        MotorControllerGroup rightMotors = new MotorControllerGroup(Right1, Right2, Right3);
+        final MotorControllerGroup leftMotors = new MotorControllerGroup(Left1, Left2, Left3);
+        final MotorControllerGroup rightMotors = new MotorControllerGroup(Right1, Right2, Right3);
         drivetrain = new DifferentialDrive(leftMotors, rightMotors);
     }
 
