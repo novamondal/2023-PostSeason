@@ -9,12 +9,12 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 public final class DriveTrain {
     private DifferentialDrive drivetrain;
     public DriveTrain() {
-        final CANSparkMax Left1 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[0], MotorType.kBrushless);
-        final CANSparkMax Left2 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[1], MotorType.kBrushless);
-        final CANSparkMax Left3 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[2], MotorType.kBrushless);
-        final CANSparkMax Right1 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[0], MotorType.kBrushless);
-        final CANSparkMax Right2 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[1], MotorType.kBrushless);
-        final CANSparkMax Right3 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[2], MotorType.kBrushless);
+        CANSparkMax Left1 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[0], MotorType.kBrushless);
+        CANSparkMax Left2 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[1], MotorType.kBrushless);
+        CANSparkMax Left3 = new CANSparkMax(Constants.LEFT_DRIVE_MOTOR_PORTS[2], MotorType.kBrushless);
+        CANSparkMax Right1 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[0], MotorType.kBrushless);
+        CANSparkMax Right2 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[1], MotorType.kBrushless);
+        CANSparkMax Right3 = new CANSparkMax(Constants.RIGHT_DRIVE_MOTOR_PORTS[2], MotorType.kBrushless);
        
         Left1.setIdleMode(IdleMode.kBrake);
         Left2.setIdleMode(IdleMode.kBrake);
@@ -47,6 +47,6 @@ public final class DriveTrain {
        //(sign of input) * (drive power) * (absolute value of input)^(drive exponent)
        final double lSpeed = Math.signum(Robot.driverController.getLeftY())*Constants.DRIVE_POWER*Math.pow(Math.abs(Robot.driverController.getLeftY()), Constants.DRIVE_EXPONENT);
        //(sign of input) * (drive power) * (absolute value of input)^(drive exponent)
-        drivetrain.tankDrive(lSpeed, rSpeed);
+        drivetrain.tankDrive(lSpeed, -1*rSpeed);
     }
 }
