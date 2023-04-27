@@ -37,8 +37,8 @@ public final class DriveTrain {
         Right3.setSecondaryCurrentLimit(Constants.CURRENT_LIMIT_AMPS);
 
 
-        MotorControllerGroup leftMotors = new MotorControllerGroup(Left1, Left2);
-        MotorControllerGroup rightMotors = new MotorControllerGroup(Right1, Right2);
+        MotorControllerGroup leftMotors = new MotorControllerGroup(Left1, Left2, Left3);
+        MotorControllerGroup rightMotors = new MotorControllerGroup(Right1, Right2, Right3);
         drivetrain = new DifferentialDrive(leftMotors, rightMotors);
     }
 
