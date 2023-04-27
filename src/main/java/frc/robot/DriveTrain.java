@@ -39,7 +39,7 @@ public final class DriveTrain {
 
         final MotorControllerGroup leftMotors = new MotorControllerGroup(Left1, Left2, Left3);
         final MotorControllerGroup rightMotors = new MotorControllerGroup(Right1, Right2, Right3);
-        drivetrain = new DifferentialDrive(leftMotors, rightMotors);
+        this.drivetrain = new DifferentialDrive(leftMotors, rightMotors);
     }
 
     public void run(){
