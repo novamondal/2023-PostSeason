@@ -47,6 +47,6 @@ public final class DriveTrain {
        //(sign of input) * (drive power) * (absolute value of input)^(drive exponent)
        final double lSpeed = Math.signum(Robot.driverController.getLeftY())*Constants.DRIVE_POWER*Math.pow(Math.abs(Robot.driverController.getLeftY()), Constants.DRIVE_EXPONENT);
        //(sign of input) * (drive power) * (absolute value of input)^(drive exponent)
-        drivetrain.tankDrive(lSpeed, -1*rSpeed);
+        drivetrain.tankDrive(-1*lSpeed, rSpeed);
     }
 }
