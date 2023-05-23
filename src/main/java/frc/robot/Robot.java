@@ -26,6 +26,7 @@ public class Robot extends TimedRobot {
 
   public static DriveTrain drivetrain;
   public static Climb climber;
+  public static Pivot pivot;
 
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -41,6 +42,8 @@ public class Robot extends TimedRobot {
     operatorController = new XboxController(Constants.OPERATOR_CONTROLLER_PORT);
     drivetrain = new DriveTrain();
     climber = new Climb();
+    pivot = new Pivot();
+    
   }
 
   /**
@@ -93,6 +96,7 @@ public class Robot extends TimedRobot {
   public void teleopPeriodic() {
     drivetrain.run();
     climber.run();
+    pivot.run();
   }
 
   /** This function is called once when the robot is disabled. */
